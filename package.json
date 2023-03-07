@@ -1,0 +1,41 @@
+{
+  "name": "mern-stack-mysql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon server/index.js",
+    "start": "node server/index.js",
+    "dev:front": "pnpm --prefix client run dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "5.1.0",
+    "cookie-parser": "1.4.6",
+    "cors": "2.8.5",
+    "dotenv": "16.0.3",
+    "express": "4.18.2",
+    "jsonwebtoken": "9.0.0",
+    "morgan": "1.10.0",
+    "mysql2": "3.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.20",
+    "standard": "17.0.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/standard/eslintrc.json"
+    ],
+    "rules": {
+      "semi": "off",
+      "doublequote": "off",
+      "space-before-function-paren": "off",
+      "multiline-ternary": "off",
+      "jsx-curly-newline": "off"
+    }
+  }
+}

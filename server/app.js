@@ -6,6 +6,7 @@ import cors from 'cors'
 import indexRoutes from './routes/index.routes.js'
 import cookiesRoutes from './routes/cookies.routes.js'
 import aulasRoutes from './routes/aulas.routes.js'
+import detAulasRoutes from './routes/detaulas.routes.js'
 
 import morgan from 'morgan'
 import cookieParser from 'cookie-parser'
@@ -43,6 +44,7 @@ app.use('/api', indexRoutes)
 app.use('/api', cookiesRoutes)
 // app.use('/api', requiereAuth, aulasRoutes)
 app.use('/api', aulasRoutes)
+app.use('/api', detAulasRoutes)
 
 // app.use(express.static(join(__dirname, '../client/dist')))
 // app.listen(BK_PORT)

@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input {
+  background-color: rgb(24, 24, 27);
+  border: solid 1px white;
+  border-radius: 10px;
+  align-items: center;
+  padding: 5px;
+}
+body {
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+  /* font-size: 1rem; */
+  font-size: clamp(11px, 1.5vw, 1.5rem);
+  font-weight: 500;
+  min-width: 500px;
+  background-color: #18181b;
+  color: white;
+}
+button {
+  background-color: rgb(63, 63, 70);
+  border-radius: 10px;
+  align-items: center;
+  padding: 6px 0;
+  color: white;
+}
+button:hover {
+  scale: 1.02;
+  filter: brightness(1.75);
+  transition-delay: 0.2s;
+  transition: 0.1s;
+}
+/* button:focus {
+  border: solid 5px #fff;
+} */
+/* a{
+    color: white;
+} */
+/* * {
+  border: solid red 1px;
+} */

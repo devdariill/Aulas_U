@@ -2,15 +2,12 @@
 import { Form, Formik } from 'formik'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useAulas } from '../context/ProductoContext'
-import { deleteProductoRequest } from '../api/aulas.api'
-// TODO : CAMPOS AUTOMATICOS NO ENVIARLOS
-function ProductoForm() {
+import { useAulas } from '../context/AulaContext'
+function AulaForm() {
   const navigate = useNavigate()
-  const { createProducto, lastCodProd, getProducto, updateProducto } =
-    useAulas()
+  const { createAula } = useAulas()
   const today = new Date().toJSON().slice(0, 10)
-  const [producto, setProducto] = useState({
+  const [aula, setAula] = useState({
     // "diasfven": 0,
     codprod: '',
     codbar: '',
@@ -24,30 +21,29 @@ function ProductoForm() {
   })
   // useEffect se ejecuta de primero
   useEffect(() => {
-    const loadProducto = async () => {
-      const codProd = await lastCodProd()
-      setProducto({
-        ...producto,
-        codprod: codProd,
+    const loadAula = async () => {
+      setAula({
+        ...aula,
+        codprod: '',
         tipcos: 'UC',
         fecapa: today,
         undfra: 0,
         pvenfra: 0
       })
     }
-    loadProducto()
+    loadAula()
   }, [])
   //   function renderMain (){
-  //   if(productos.length > 0){
-  //     return productos.map((producto) => (
-  //       <ProductoCard key={producto.codprod} producto={producto} />
+  //   if(Aulas.length > 0){
+  //     return Aulas.map((Aula) => (
+  //       <AulaCard key={Aula.codprod} Aula={Aula} />
   //     ));
   //   } else {
-  //     return <p>No hay productos</p>
+  //     return <p>No hay Aulas</p>
   //   }
   // }
   // }, [codProd === -1 ]);
-  // if ( producto. === undefined ) {
+  // if ( Aula. === undefined ) {
   // } else {
   //   if (codProd === -1) {
   //     return <div>Cargando...</div>;
@@ -56,32 +52,24 @@ function ProductoForm() {
   return (
     <>
       <div className='flex justify-between items-center mb-2'>
-        <h2>Crear Producto</h2>
+        <h2>Crear Aula</h2>
       </div>
       <hr className='mb-5' />
       <Formik
-        initialValues={producto}
+        initialValues={aula}
         enableReinitialize
         onSubmit={async (values, actions) => {
           try {
-            // # se envian datos pero al navigate se demora en actualizar y ya se tienen los ultimos productos en el array
-            values.codbar ? null : (values.codbar = values.codprod)
-            await createProducto(values)
+            // # se envian datos pero al navigate se demora en actualizar y ya se tienen los ultimos Aulas en el array
+            await createAula(values)
             actions.resetForm()
-            navigate('/productos')
+            navigate('/aulas')
           } catch (error) {
             console.log(
-              '🚀 ~ file: Add.productos.jsx:74 ~ onSubmit={ ~ error:',
+              '🚀 ~ file: Add.aulas.jsx:68 ~ onSubmit={ ~ error:',
               error
             )
           }
-          // refresca los campos  despues de enviar
-          // setProducto({
-          //   codprod: "",
-          //   codbar: "",
-          //   nomprod: "",
-          //   exiprod: "",
-          // })
         }}
       >
         {({ handleChange, handleSubmit, values, isSubmitting }) => (
@@ -170,7 +158,7 @@ function ProductoForm() {
               disabled={isSubmitting}
               // onClick={() => window.location.reload(false)}
             >
-              {isSubmitting ? 'Cargando...' : 'Crear Producto'}
+              {isSubmitting ? 'Cargando...' : 'Crear Aula'}
             </button>
           </Form>
         )}
@@ -178,4 +166,4 @@ function ProductoForm() {
     </>
   )
 }
-export default ProductoForm
+export default AulaForm

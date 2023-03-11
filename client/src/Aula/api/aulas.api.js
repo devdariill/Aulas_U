@@ -11,8 +11,8 @@ export const deleteAulaRequest = async (id) =>
 export const getAulaRequest = async (codprod) =>
   await axios.get(`/aulas/${codprod}`)
 
-export const updateAulaRequest = async (id, Aula) =>
-  await axios.put(`/aulas/${id}`, Aula)
+export const updateAulaRequest = async (id, aula) =>
+  await axios.put(`/aulas/${id}`, aula)
 
 // export const toggleTaskDoneRequest = async (codprod, done) =>
 //   await axios.put(`/aulas/${codprod}`, {

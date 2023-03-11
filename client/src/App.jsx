@@ -4,10 +4,9 @@ import NotFound from './pages/NotFound'
 import Usuario from './Usuario/pages/Page.usuarios'
 import LoginUsuario from './Usuario/pages/Login.usuarios'
 import AddUsuariosForm from './Usuario/pages/Add.usuarios'
-import Productos from './Aula/pages/Page.productos'
-// import AddProductoForm from "./Aula/pages/Add.productos";
-import ProductoForm from './Aula/pages/Form.productos'
-import ProductoAdd from './Aula/pages/Add.productos'
+import Aulas from './Aula/pages/Page.aulas'
+// import ProductoForm from './Aula/pages/Form.aulas'
+// import ProductoAdd from './Aula/pages/Add.aulas'
 // import Cookie from './Cookie/pages/Page.cookies'
 import AddCookie from './Cookie/pages/Add.cookies'
 import Home from './pages/Page.Home'
@@ -28,11 +27,11 @@ function App() {
           <Route path='/usuarios/login' element={<LoginUsuario />} />
           <Route element={<ProtectRoute isAllow={isAuth} />}>
             <Route path='/productos'>
-              <Route index element={<Productos />} />
+              <Route index element={<Aulas />} />
               {/* <Route path="add" element={<CreateProductoForm />} /> */}
               {/* TODO FIX NAVBAR */}
-              <Route path='add' element={<ProductoAdd />} />
-              <Route path='edit/:codprod' element={<ProductoForm />} />
+              <Route path='add' element={<Aulas />} />
+              <Route path='edit/:codprod' element={<Aulas />} />
             </Route>
             <Route path='/usuarios'>
               <Route index element={<Usuario />} />
@@ -46,22 +45,3 @@ function App() {
   )
 }
 export default App
-// {
-//   /*
-//   const rutas = [
-//     { name: "Productos", path: "/productos",lvl:1 },
-//     { name: "Ventas", path: "/ventas", lvl:2},
-//     { name: "Compras", path: "/compras", lvl:3 },
-//     { name: "Terceros", path: "/terceros", lvl:4 },
-//   ];
-//   <LOGIN>
-//     IF(USER.LEVEL=1)
-//       ...Rutas.map() de lvl 1
-//     ELSE IF(USER.LEVEL=2)
-//       ...Rutas.map() de lvl 2
-//     ...
-//     ROUTES.MAP
-
-//   <LOGIN>
-//  */
-// }

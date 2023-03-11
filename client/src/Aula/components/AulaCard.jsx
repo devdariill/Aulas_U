@@ -1,41 +1,33 @@
 /* eslint-disable indent */
 import { useNavigate, useLocation } from 'react-router-dom'
-function ProductoCard({ producto }) {
+function AulaCard({ aula }) {
   const { pathname } = useLocation()
   const navigate = useNavigate()
   // useEffect(() => {
-  //   console.log(productoVenta);
-  // }, [productoVenta]);
+  //   console.log(aulaVenta);
+  // }, [aulaVenta]);
   return (
     <div className='my-2'>
       <button
         className='block bg-zinc-600 text-center rounded-md w-full border-none font-semibold py-1 cursor-pointer'
         // onClick={() => (console.log(pathname))}
-        onClick={
-          () => {
-            if (pathname === '/productos') {
-              navigate(`/productos/edit/${producto.codprod}`)
-            }
+        onClick={() => {
+          if (pathname === '/aulas') {
+            navigate(`/aulas/edit/${aula.codprod}`)
           }
-          // pathname === '/productos'
-          //   ? navigate(`/productos/edit/${producto.codprod}`)
-          //   : pathname === '/ventas/add'
-          //   ? setProductoVenta(producto)
-          //   : pathname === '/compras/add' && setProductoCompra(producto)
-          // eslint-disable-next-line react/jsx-curly-newline
-        }
+        }}
       >
-        {producto.nomprod}
+        {aula.nomprod}
       </button>
       <div className='grid grid-cols-3 text-center'>
-        <p>{producto.codprod}</p>
-        <p>{producto.cosulc}</p>
+        <p>{aula.codprod}</p>
+        <p>{aula.cosulc}</p>
         <p>
-          {producto.venprod}
-          {/* {producto.pvenfra.toLocaleString() > 0 ? `-${producto.pvenfra}` : ""}  */}
+          {aula.venprod}
+          {/* {aula.pvenfra.toLocaleString() > 0 ? `-${aula.pvenfra}` : ""}  */}
         </p>
       </div>
     </div>
   )
 }
-export default ProductoCard
+export default AulaCard

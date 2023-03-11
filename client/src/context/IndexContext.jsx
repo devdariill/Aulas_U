@@ -1,7 +1,4 @@
 import { useContext, useState, createContext } from 'react'
-// import {
-//   createProductoRequest,
-// } from "../api/productos.api";
 export const IndexContext = createContext()
 export const useIndex = () => {
   const context = useContext(IndexContext)

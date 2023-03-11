@@ -28,9 +28,9 @@ export const AulaContextProvider = ({ children }) => {
       console.log('🚀 ~ file: AulaContext.jsx:29 ~ deleteAula ~ error:', error)
     }
   }
-  const createAula = async (producto) => {
+  const createAula = async (aula) => {
     try {
-      await createAulaRequest(producto)
+      await createAulaRequest(aula)
       // add new Aulato the list
       // setaulas([...aulas, res.data]);
       // # se envian datos pero al navigate se demora en actualizar y ya se tienen los ultimos aulas en el array
@@ -50,9 +50,9 @@ export const AulaContextProvider = ({ children }) => {
       )
     }
   }
-  const updateAula = async (id, producto) => {
+  const updateAula = async (id, aula) => {
     try {
-      await updateAulaRequest(id, producto)
+      await updateAulaRequest(id, aula)
     } catch (error) {
       console.log(
         '🚀 ~ file: AulaContext.jsx ~ line 67 ~ getAula~ error',

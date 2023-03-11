@@ -1,29 +1,29 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import ProductoCard from '../components/ProductoCard'
-import { useAulas } from '../context/ProductoContext'
+import AulaCard from '../components/AulaCard'
+import { useAulas } from '../context/AulaContext'
 // import Search from "../../components/Search";
 import Search from '../components/Search'
-function Productos() {
+function Aulas() {
   const navigate = useNavigate()
-  const { productos, loadProductos } = useAulas()
+  const { aulas, loadAulas } = useAulas()
   useEffect(() => {
-    loadProductos()
+    loadAulas()
   }, [])
   return (
     <div>
       <div className='grid grid-cols-2 justify-between items-center gap-3'>
         <p className='text-center bg-zinc-800  rounded-md p-1  font-extrabold mb-3'>
-          Productos
+          Aulas
         </p>
         <a
           className='bg-zinc-600 p-1 text-center rounded-md w-full border-none font-semibold mb-3 cursor-pointer'
-          onClick={() => navigate('/productos/add')}
+          onClick={() => navigate('/aulas/add')}
         >
-          Crear Producto
+          Crear Aula
         </a>
       </div>
-      {productos.length > 0 ? (
+      {aulas.length > 0 ? (
         <div>
           <Search />
           <div className='grid grid-cols-3 text-center mt-2'>
@@ -32,14 +32,14 @@ function Productos() {
             <p>Precio</p>
             <p />
           </div>
-          {productos.map((producto) => (
-            <ProductoCard key={producto.codprod} producto={producto} />
+          {aulas.map((aula) => (
+            <AulaCard key={aula.codprod} aula={aula} />
           ))}
         </div>
       ) : (
-        <p className='text-center'>No hay productos</p>
+        <p className='text-center'>No hay aulas</p>
       )}
     </div>
   )
 }
-export default Productos
+export default Aulas

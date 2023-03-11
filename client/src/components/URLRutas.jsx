@@ -4,7 +4,7 @@ function URLRutas() {
   const navigate = useNavigate()
   const { setOpen } = useIndex()
 
-  const rutas = [{ name: 'Productos', path: '/productos' }]
+  const rutas = [{ name: 'Aulas', path: '/aulas' }]
   return (
     <div className='items-center justify-center w-full mx-auto'>
       <div

@@ -1,8 +1,8 @@
 import { Form, Formik } from 'formik'
-import { useAulas } from '../context/ProductoContext'
+import { useAulas } from '../context/AulaContext'
 
 function Search() {
-  const { searchProductos } = useAulas()
+  const { searchAulas } = useAulas()
 
   return (
     <div className='block self-center'>
@@ -12,7 +12,7 @@ function Search() {
         }}
         enableReinitialize
         onSubmit={async (values) => {
-          await searchProductos(values)
+          await searchAulas(values)
         }}
       >
         {({ handleChange, handleSubmit, values }) => (

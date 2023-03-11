@@ -5,8 +5,8 @@ import Usuario from './Usuario/pages/Page.usuarios'
 import LoginUsuario from './Usuario/pages/Login.usuarios'
 import AddUsuariosForm from './Usuario/pages/Add.usuarios'
 import Aulas from './Aula/pages/Page.aulas'
-// import ProductoForm from './Aula/pages/Form.aulas'
-// import ProductoAdd from './Aula/pages/Add.aulas'
+// import AulaForm from './Aula/pages/Form.aulas'
+// import AulaAdd from './Aula/pages/Add.aulas'
 // import Cookie from './Cookie/pages/Page.cookies'
 import AddCookie from './Cookie/pages/Add.cookies'
 import Home from './pages/Page.Home'
@@ -26,10 +26,8 @@ function App() {
           {/* </Route> */}
           <Route path='/usuarios/login' element={<LoginUsuario />} />
           <Route element={<ProtectRoute isAllow={isAuth} />}>
-            <Route path='/productos'>
+            <Route path='/aulas'>
               <Route index element={<Aulas />} />
-              {/* <Route path="add" element={<CreateProductoForm />} /> */}
-              {/* TODO FIX NAVBAR */}
               <Route path='add' element={<Aulas />} />
               <Route path='edit/:codprod' element={<Aulas />} />
             </Route>

@@ -27,13 +27,13 @@ function Aulas() {
         <div>
           <Search />
           <div className='grid grid-cols-3 text-center mt-2'>
-            <p>Codigo</p>
-            <p>Costo</p>
-            <p>Precio</p>
+            <p>ID</p>
+            <p>Nombre</p>
+            <p>Tipo</p>
             <p />
           </div>
           {aulas.map((aula) => (
-            <AulaCard key={aula.codprod} aula={aula} />
+            <AulaCard key={aula.id} aula={aula} />
           ))}
         </div>
       ) : (

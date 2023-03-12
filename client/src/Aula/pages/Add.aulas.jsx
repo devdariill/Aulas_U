@@ -6,6 +6,7 @@ function AulaForm() {
   const customSubmit = (aula) => {
     console.log(aula)
     createAula(aula)
+    // createAula(aula)
   }
 
   // const navigate = useNavigate()
@@ -54,24 +55,24 @@ function AulaForm() {
   //   }
   // }
   return (
-    <>
+    <div className='flex flex-col justify-center items-center gap-5'>
       <h2>Form Basic</h2>
       <form onSubmit={handleSubmit(customSubmit)}>
-        <div>
-          <label>Name</label>
-          <input type='text' {...register('name')} />
+        <div className='gap-5 grid'>
+          <div className='flex gap-x-5'>
+            <label>Nombre</label>
+            <input className='w-full' type='text' {...register('nombre')} />
+          </div>
+          <div className='flex gap-x-5'>
+            <label>Tipo</label>
+            <input className='w-full' type='number' {...register('tipo')} />
+          </div>
+          <button type='submit' className='w-full bg-zinc-300 text-black'>
+            Send
+          </button>
         </div>
-        <div>
-          <label>Age</label>
-          <input type='number' {...register('age')} />
-        </div>
-        <div>
-          <label>Country</label>
-          <input type='text' {...register('country')} />
-        </div>
-        <button type='submit'>Send</button>
       </form>
-    </>
+    </div>
   )
 }
 export default AulaForm

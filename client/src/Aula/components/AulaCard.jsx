@@ -17,15 +17,11 @@ function AulaCard({ aula }) {
           }
         }}
       >
-        {aula.nomprod}
+        {aula.nombre}
       </button>
-      <div className='grid grid-cols-3 text-center'>
-        <p>{aula.codprod}</p>
-        <p>{aula.cosulc}</p>
-        <p>
-          {aula.venprod}
-          {/* {aula.pvenfra.toLocaleString() > 0 ? `-${aula.pvenfra}` : ""}  */}
-        </p>
+      <div className='grid grid-cols-2 text-center'>
+        <p>{aula.id}</p>
+        <p>{aula.tipo}</p>
       </div>
     </div>
   )
